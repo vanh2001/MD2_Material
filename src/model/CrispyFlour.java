@@ -1,6 +1,10 @@
+package model;
+
+import model.Material;
+
 import java.time.LocalDate;
 
-public class CrispyFlour extends Material{
+public class CrispyFlour extends Material {
     private int quantity;
 
     public CrispyFlour() {
@@ -24,6 +28,14 @@ public class CrispyFlour extends Material{
     }
 
     @Override
+    public String toString() {
+        return "CrispyFlour{" +
+                super.toString() +
+                ", quantity=" + quantity +
+                '}';
+    }
+
+    @Override
     public double getAmount() {
         double getAmount = quantity * getCost();
         return getAmount;
@@ -31,7 +43,7 @@ public class CrispyFlour extends Material{
 
     @Override
     public LocalDate getExpiryDate() {
-        LocalDate getExpiryDate = getManufacturingDate();
+        LocalDate getExpiryDate = getManufacturingDate().plusYears(1);
         return getExpiryDate;
     }
 }

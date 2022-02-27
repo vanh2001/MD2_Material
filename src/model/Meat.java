@@ -1,6 +1,10 @@
+package model;
+
+import model.Material;
+
 import java.time.LocalDate;
 
-public class Meat extends Material{
+public class Meat extends Material {
     private double weight;
 
     public Meat() {
@@ -15,6 +19,22 @@ public class Meat extends Material{
         this.weight = weight;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Meat{" +
+                super.toString() +
+                "weight=" + weight +
+                '}';
+    }
+
     @Override
     public double getAmount() {
         double getAmount = getCost() * weight;
@@ -23,7 +43,7 @@ public class Meat extends Material{
 
     @Override
     public LocalDate getExpiryDate() {
-        LocalDate getExpiryDate = getManufacturingDate();
+        LocalDate getExpiryDate = getManufacturingDate().plusDays(7);
         return getExpiryDate;
     }
 }
