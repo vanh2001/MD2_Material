@@ -52,7 +52,66 @@ public class MaterialManager {
                 String id = addid.nextLine();
                 Scanner addname = new Scanner(System.in);
                 System.out.print("Mời bạn nhập name Crispy: ");
-                String name = addid.nextLine();
+                String name = addname.nextLine();
+                Scanner adddate = new Scanner(System.in);
+                System.out.print("Mời bạn nhập date of Crispy: ");
+                int date = adddate.nextInt();
+                Scanner addmonth = new Scanner(System.in);
+                System.out.print("Mời bạn nhập month of Crispy: ");
+                int month = addmonth.nextInt();
+                Scanner addyear = new Scanner(System.in);
+                System.out.print("Mời bạn nhập year of Crispy: ");
+                int year = addmonth.nextInt();
+                Scanner addcost = new Scanner(System.in);
+                System.out.print("Mời bạn nhập cost Crispy: ");
+                int cost = addcost.nextInt();
+                Scanner addquantity = new Scanner(System.in);
+                System.out.print("Mời bạn nhập quantity Crispy: ");
+                int quantity = addquantity.nextInt();
+                LocalDate localDate = LocalDate.of(year,month, date);
+                CrispyFlour newCrispy = new CrispyFlour();
+                newCrispy.setId(id);
+                newCrispy.setName(name);
+                newCrispy.setManufacturingDate(localDate);
+                newCrispy.setCost(cost);
+                newCrispy.setQuantity(quantity);
+                materials.add(newCrispy);
+                break;
+            case 2:
+                Scanner addid2 = new Scanner(System.in);
+                System.out.print("Mời bạn nhập id: ");
+                String id2 = addid2.nextLine();
+                Scanner addname2 = new Scanner(System.in);
+                System.out.print("Mời bạn nhập name Crispy: ");
+                String name2 = addname2.nextLine();
+                Scanner adddate2 = new Scanner(System.in);
+                System.out.print("Mời bạn nhập date of Crispy: ");
+                int date2 = adddate2.nextInt();
+                Scanner addmonth2 = new Scanner(System.in);
+                System.out.print("Mời bạn nhập month of Crispy: ");
+                int month2 = addmonth2.nextInt();
+                Scanner addyear2 = new Scanner(System.in);
+                System.out.print("Mời bạn nhập year of Crispy: ");
+                int year2 = addyear2.nextInt();
+                Scanner addcost2 = new Scanner(System.in);
+                System.out.print("Mời bạn nhập cost Crispy: ");
+                int cost2 = addcost2.nextInt();
+                Scanner addweight = new Scanner(System.in);
+                System.out.print("Mời bạn nhập quantity Crispy: ");
+                double weight = addweight.nextDouble();
+                LocalDate localDate2 = LocalDate.of(year2,month2, date2);
+                Meat newMeat = new Meat();
+                newMeat.setId(id2);
+                newMeat.setName(name2);
+                newMeat.setManufacturingDate(localDate2);
+                newMeat.setCost(cost2);
+                newMeat.setWeight(weight);
+                materials.add(newMeat);
+                break;
+        }
+        System.out.println("List Material: ");
+        for (Material e: materials) {
+            System.out.println(e.toString());
         }
     }
 }
