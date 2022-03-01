@@ -31,7 +31,7 @@ public class Meat extends Material {
     public String toString() {
         return "Meat{" +
                 super.toString() +
-                "weight=" + weight +
+                ", weight=" + weight +
                 '}';
     }
 
